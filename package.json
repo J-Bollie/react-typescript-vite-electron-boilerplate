@@ -1,0 +1,64 @@
+{
+	"name": "react-typescript-vite-electron-boilerplate",
+	"version": "1.0.0",
+	"description": "A boilerplate that uses React, Typescript, Vite and Electron to build desktop applications.",
+	"main": "./dist/main.js",
+	"scripts": {
+		"dev": "concurrently \"npm run react:dev\" \"npm run electron:dev\"",
+		"react:dev": "vite",
+		"electron:dev": "nodemon --dev",
+		"react:build": "vite build",
+		"electron:build": "tsc --outDir dist/ ./src/electron/main.ts",
+		"react:start": "vite preview",
+		"electron:start": "electron ./dist/main.js",
+		"build": "npm run react:build && npm run electron:build",
+		"production:windows": "npm run build && electron-builder build --win",
+		"production:linux": "npm run build && electron-builder build --linux"
+	},
+	"author": "John Doe",
+	"license": "MIT",
+	"devDependencies": {
+		"@types/electron": "^1.6.10",
+		"@types/react": "^18.0.26",
+		"@types/react-dom": "^18.0.9",
+		"@types/styled-components": "^5.1.26",
+		"@vitejs/plugin-react": "^3.0.0",
+		"concurrently": "^7.6.0",
+		"electron": "^22.0.0",
+		"electron-builder": "^23.6.0",
+		"nodemon": "^2.0.20",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-router-dom": "^6.5.0",
+		"styled-components": "^5.3.6",
+		"tslib": "^2.4.1",
+		"typescript": "^4.9.4",
+		"vite": "^4.0.2",
+		"vite-plugin-electron-renderer": "^0.11.3",
+		"vite-plugin-singlefile": "^0.13.2",
+		"vite-plugin-svgr": "^2.4.0",
+		"vite-plugin-typescript": "^1.0.4"
+	},
+	"build": {
+		"appId": "be.example.app",
+		"productName": "react-typescript-vite-electron-boilerplate",
+		"copyright": "Copyright © 2022 John Doe",
+		"directories": {
+			"output": "installer"
+		},
+		"win": {
+			"target": "nsis",
+			"icon": "build/example.png"
+		},
+		"nsis": {
+			"oneClick": false,
+			"allowToChangeInstallationDirectory": true
+		},
+		"linux": {
+			"target": "appimage",
+			"category": "Development",
+			"maintainer": "Jensen Bollen",
+			"icon": "build/example.png"
+		}
+	}
+}
