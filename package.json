@@ -25,6 +25,7 @@
 		"@vitejs/plugin-react": "^3.0.0",
 		"concurrently": "^7.6.0",
 		"electron": "^22.0.0",
+		"electron-builder": "^24.6.4",
 		"nodemon": "^3.0.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
@@ -59,8 +60,5 @@
 			"maintainer": "Jensen Bollen",
 			"icon": "build/example.png"
 		}
-	},
-	"dependencies": {
-		"electron-builder": "^24.6.4"
 	}
 }
