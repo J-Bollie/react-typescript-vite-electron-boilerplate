@@ -4,7 +4,7 @@ import styled from "styled-components";
 function App() {
 	return (
 		<Container>
-			<h1>App</h1>
+			<h1>App 1</h1>
 		</Container>
 	);
 }
