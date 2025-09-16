@@ -2,6 +2,8 @@ import { defineConfig } from "vite";
 import { viteSingleFile } from "vite-plugin-singlefile";
 import renderer from "vite-plugin-electron-renderer";
 import react from "@vitejs/plugin-react";
+import viteTsPlugin from "vite-plugin-ts";
+import svgr from "vite-plugin-svgr";
 
 export default defineConfig({
   root: __dirname,
@@ -27,11 +29,11 @@ export default defineConfig({
     // The plugin below is required for hot reloading React application.
     react(),
     // The plugin below is required for typescript support in Vite.
-    require("vite-plugin-ts")({
+    viteTsPlugin({
       tsconfig: "tsconfig.json",
     }),
     // The plugin below is required for importing SVG files as React components.
-    require("vite-plugin-svgr")(),
+    svgr(),
     // The plugin below is required for using Node modules in the renderer process.
     renderer({
       nodeIntegration: true,
