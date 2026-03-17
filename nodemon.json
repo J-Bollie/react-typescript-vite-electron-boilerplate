@@ -1,5 +1,5 @@
 {
 	"watch": ["src/electron/*"],
-	"exec": "tsc --outDir dist/ ./src/electron/main.ts && electron ./dist/main.js",
+	"exec": "tsc --project . --outDir dist && electron ./dist/main.js",
 	"ext": "ts"
 }
